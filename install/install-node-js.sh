@@ -20,3 +20,5 @@ nvm use $NODE_VERSION
 # npmの最新バージョンをインストール
 npm install -g npm@latest
 
+# Node.jsのバージョンを確認
+node -v
