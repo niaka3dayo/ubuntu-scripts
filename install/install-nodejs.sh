@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# バージョン番号を指定 (e.g.: 18.18.2)
-NODE_VERSION="18.18.2"
+# バージョン番号を指定 (e.g.: 20.9.0)
+NODE_VERSION="20.9.0"
 
 # nvmをインストール
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
