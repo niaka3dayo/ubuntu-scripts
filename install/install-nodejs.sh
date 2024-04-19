@@ -16,6 +16,7 @@ nvm use --lts
 
 # npmの最新バージョンをインストール
 npm install -g npm@latest
+npm install -g pnpm@latest
 
 # Node.jsのバージョンを確認
 node -v
