@@ -1,22 +1,25 @@
 #!/bin/bash
 
-# nvmの最新バージョンを取得してインストール
+# Get and install the latest version of nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 
-# nvm環境をロード
+# Load the nvm environment
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-# Node.jsの最新LTS版を取得してインストール
+# Get and install the latest LTS version of Node.js
 nvm install --lts
 
-# 最新LTS版のNode.jsを使用するように設定
+# Set the latest LTS version of Node.js as the active version
 nvm use --lts
 
-# npmの最新バージョンをインストール
+# Install the latest version of npm
 npm install -g npm@latest
+# Install the latest version of pnpm
 npm install -g pnpm@latest
+# Install the latest version of yarn
+npm install -g yarn@latest
 
-# Node.jsのバージョンを確認
+# Check the Node.js version
 node -v
