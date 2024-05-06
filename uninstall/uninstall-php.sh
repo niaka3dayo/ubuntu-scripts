@@ -1,19 +1,19 @@
 #!/bin/bash
 
-# インストールされているPHPパッケージをリストアップします
+# List up installed PHP packages
 PHP_PACKAGES=$(dpkg -l | grep php | awk '{print $2}' | tr '\n' ' ')
 
-# PHPと関連パッケージをアンインストールします
+# Uninstall PHP and related packages
 sudo apt-get purge -y $PHP_PACKAGES
 
-# PHPの設定とセッションディレクトリを削除します
+# Remove PHP configuration and session directories
 sudo rm -rf /etc/php/
 sudo rm -rf /var/lib/php/
 
-# PPAリポジトリを削除します (もしOndřej SurýのPPAを使用していた場合)
+# Remove PPA repository (if using Ondřej Surý's PPA)
 sudo add-apt-repository --remove ppa:ondrej/php
 sudo apt-get update
 
-# システムの残りの不要なパッケージと依存関係を削除します
+# Remove remaining unnecessary packages and dependencies from the system
 sudo apt-get autoremove -y
 sudo apt-get autoclean -y

@@ -1,24 +1,23 @@
 #!/bin/bash
 
-# Dockerデーモンを停止します
+# Stop the Docker daemon
 sudo systemctl stop docker
 
-# Dockerエンジンおよび関連パッケージをアンインストールします
+# Uninstall Docker engine and related packages
 sudo apt-get purge -y docker-ce docker-ce-cli containerd.io
 
-# Dockerのパッケージリストを削除します
+# Remove Docker package list
 sudo rm /etc/apt/sources.list.d/docker.list
 
-# DockerのGPGキーを削除します
+# Remove Docker GPG key
 sudo rm /usr/share/keyrings/docker-archive-keyring.gpg
 
-# システムの残りの不要なパッケージと依存関係を削除します
+# Remove remaining unnecessary packages and dependencies from the system
 sudo apt-get autoremove -y
 sudo apt-get autoclean -y
 
-# Dockerディレクトリを削除します
+# Remove Docker directory
 sudo rm -rf /var/lib/docker
 
-# dockerグループを削除します
+# Remove docker group
 sudo delgroup docker
-

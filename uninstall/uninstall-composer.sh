@@ -1,21 +1,21 @@
 #!/bin/bash
 
-# グローバルにインストールされたComposerバイナリを削除
+# Remove globally installed Composer binary
 sudo rm /usr/local/bin/composer
 
-# もしユーザーローカルにComposerバイナリがインストールされている場合、それも削除
+# If Composer binary is installed locally for the user, remove it as well
 rm $HOME/.composer/bin/composer
 
-# Composerの設定とキャッシュディレクトリを削除
+# Remove Composer's configuration and cache directory
 rm -rf $HOME/.composer
 
-# 他の可能なロケーションからComposerを削除
+# Remove Composer from other possible locations
 sudo rm /usr/bin/composer
 
-# .bashrcや.bash_profileからComposerのパスを削除
+# Remove Composer's path from .bashrc and .bash_profile
 sed -i '/.composer\/bin/d' ~/.bashrc
 sed -i '/.composer\/bin/d' ~/.bash_profile
 
-# .bashrcと.bash_profileを再読み込み
+# Reload .bashrc and .bash_profile
 source ~/.bashrc
 source ~/.bash_profile

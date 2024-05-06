@@ -1,16 +1,16 @@
 #!/bin/bash
 
-# Composerをダウンロード
+# Download Composer
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 
-# Composerインストーラーを実行
+# Run Composer installer
 php composer-setup.php
 
-# Composerインストーラーを削除
+# Remove Composer installer
 rm composer-setup.php
 
-# Composerバイナリをグローバルに移動
+# Move Composer binary to global location
 sudo mv composer.phar /usr/local/bin/composer
 
-# Composerバージョンを確認
+# Check Composer version
 composer --version
